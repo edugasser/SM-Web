@@ -262,11 +262,11 @@
 						marginBottom: 5
 					},
 					title: {
-						text: 'Gráfica tiempo primer comentario',
+						text: 'Gráfica tiempo primera publicación',
 						x: -20 //center
 					},
 					subtitle: {
-						text: 'Tiempo hasta que se recibe el primer comentario',
+						text: 'Tiempo hasta que se recibe la primera publicación',
 						x: -20
 					},
 					xAxis: {
