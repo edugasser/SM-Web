@@ -248,7 +248,7 @@
 						<h4 style="margin:20px;">El tiempo medio de respuesta de un comentario es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_first;?> min.</span></h4>
 						<a href="grafica.php?gf=first&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" target="_parent" class="button orange"  style="margin-left:20px;"  >Ver grafica</a>
 						 
-						<h4 style="margin:20px;">El tiempo medio de vida de un comentario es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_last;?> min.</span></h4>
+						<h4 style="margin:20px;">El tiempo medio de vida de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_last;?> min.</span></h4>
 						<a href="grafica.php?gf=last&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" class="button orange"  style="margin-left:20px;" data-router="section">Ver grafica</a>
 						 
 
