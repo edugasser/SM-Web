@@ -222,6 +222,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
+					<p align="right" style="margin-top:40px;"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"></p>
                </div>
                         
                <div id="header_right">
@@ -316,7 +317,7 @@ $(function () {
                         color: '#000000',
                         connectorColor: '#000000',
                         formatter: function() {
-                            return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                            return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage*100)/100 +' %';
                         }
                     }
                 }

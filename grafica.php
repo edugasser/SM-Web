@@ -145,6 +145,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
+					<p align="right" style="margin-top:40px;"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"></p>
                </div>
                         
                <div id="header_right">
