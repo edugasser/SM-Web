@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     
     <!-- [portable options] -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     
     <!-- [SEO] -->
@@ -226,7 +226,7 @@
                </div>
                         
                <div id="header_right">
-                     <a href="javascript:history.back();"><< Volver atrás</a>
+                     <a href="javascript:history.back();"><img src="img/icons/back2.png"></a>
                </div>
                         
                 </div>
