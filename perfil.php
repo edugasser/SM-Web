@@ -84,7 +84,7 @@
 			$network= $_GET['network'];
 			$where="";
 			if ($network == 'facebook') $where = "and tu_posts.network='facebook'";
-			$conexion = mysql_connect("localhost", "root", "");
+			$conexion = mysql_connect("ec2-54-247-9-188.eu-west-1.compute.amazonaws.com", "edugasser", "010203");
 			mysql_select_db("thinkupdb", $conexion);
 			$queEmp = "
 			SELECT 
