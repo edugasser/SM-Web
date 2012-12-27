@@ -178,7 +178,7 @@
                 <div id="footer_content">
                     <div class="widget">
                         <h4>Social App SM</h4>
-                        <p>Esta aplicación realiza estadísticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Tweeter.</p>
+                        <p>Esta aplicación realiza estadísticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
                     </div>
                     <div class="widget">
                         <ul class="social">
