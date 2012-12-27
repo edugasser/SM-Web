@@ -226,7 +226,7 @@
                </div>
                         
                <div id="header_right">
-                     <a href="javascript:history.back();"><< Volver atrás</a>
+                     <a href="javascript:history.back();"><img src="img/icons/back2.png"></a>
                </div>
                         
                 </div>
