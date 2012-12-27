@@ -213,7 +213,7 @@
 						x: -20 //center
 					},
 					subtitle: {
-						text: 'Tiempo de vida de un comentario',
+						text: 'Tiempo de vida de una publicación',
 						x: -20
 					},
 					xAxis: {
@@ -266,7 +266,7 @@
 						x: -20 //center
 					},
 					subtitle: {
-						text: 'Tiempo hasta que se recibe la primera publicación',
+						text: 'Tiempo hasta que se recibe el primer comentario',
 						x: -20
 					},
 					xAxis: {
