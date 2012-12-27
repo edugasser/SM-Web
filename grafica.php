@@ -13,7 +13,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Lukas Postulka, http://themeforest.net/user/pista42"> 
     
-	<title>Swiper - Tablet and Mobile Template</title>
+	<title>Social App SM</title>
     
     <!-- [loading stylesheets] -->    
     <link type="text/css" rel="stylesheet" href="css/style.css" />
@@ -113,8 +113,9 @@
  
 			   }
 			}
+			 $max = 50;
 			 
-	 
+			if ($totEmp<50) $max = $totEmp;
 		?>
 
     <section id="page-wrapper">	
@@ -122,7 +123,9 @@
     	<section id="menu">
         	<div>
     		<h4>Navigation</h4>
+			
             <ul>
+				
             	<a href="index-2.html"><li class="item"><img src="img/icons/icon_home.png" alt="" /><span>Home</span></li></a>
             
             </ul>
@@ -135,7 +138,9 @@
     	<section id="content-wrapper">	
         
             <section id="header">
-                    
+                <div id="header_left">
+					<a href="index.html"><img src="img/icons/icon_home.png" alt="" /></a>
+               </div>
              
                         
                <div id="header_title">
@@ -243,7 +248,7 @@
 					},
 					series: [{
 						name: 'Comentarios',
-						 data: [<?php for ($i=1;$i<$contador_comment;$i++){echo $array_last[$i];echo ",";}?>]
+						 data: [<?php for ($i=1;$i<$max;$i++){echo $array_last[$i];echo ",";}?>]
 					}]
 				});
 			});
@@ -302,7 +307,7 @@
 					},
 					series: [{
 						name: 'Comentarios',
-						 data: [<?php for ($i=1;$i<$contador_comment;$i++){echo $array[$i];echo ",";}?>]
+						 data: [<?php for ($i=1;$i<$max;$i++){echo $array[$i];echo ",";}?>]
  
 					}]
 				});
