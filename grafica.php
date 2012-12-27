@@ -145,7 +145,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
-					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
+					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="60" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
                </div>
                         
                <div id="header_right">
@@ -162,7 +162,7 @@
                     <div class="article_wrapper">
                  
                         <a class="article_title"><h2>Estadisticas</h2></a>
-                        <p class="prologue">Estadisticas sobre el tiempo de respuesta de comentarios</p>
+                        <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
                        
                         <hr />
 						
@@ -205,7 +205,7 @@
 					chart: {
 						renderTo: 'container',
 						type: 'line',
-						marginRight: 130,
+						marginRight: 5,
 						marginBottom: 25
 					},
 					title: {
@@ -239,14 +239,7 @@
 								this.x +': '+ this.y +'';
 						}
 					},
-					legend: {
-						layout: 'vertical',
-						align: 'right',
-						verticalAlign: 'top',
-						x: -10,
-						y: 100,
-						borderWidth: 0
-					},
+					 
 					series: [{
 						name: 'Comentarios',
 						 data: [<?php for ($i=1;$i<$max;$i++){echo $array_last[$i];echo ",";}?>]
@@ -265,8 +258,8 @@
 					chart: {
 						renderTo: 'container',
 						type: 'line',
-						marginRight: 130,
-						marginBottom: 25
+						marginRight: 5,
+						marginBottom: 5
 					},
 					title: {
 						text: 'Gráfica tiempo primer comentario',
@@ -298,14 +291,7 @@
 								this.x +': '+ this.y +'';
 						}
 					},
-					legend: {
-						layout: 'vertical',
-						align: 'right',
-						verticalAlign: 'top',
-						x: -10,
-						y: 100,
-						borderWidth: 0
-					},
+					 
 					series: [{
 						name: 'Comentarios',
 						 data: [<?php for ($i=1;$i<$max;$i++){echo $array[$i];echo ",";}?>]

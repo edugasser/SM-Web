@@ -222,7 +222,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
-					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"></a></p>
+					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="60" src="img/<?php echo $_GET['user'];?>.jpg"></a></p>
                </div>
                         
                <div id="header_right">
@@ -239,7 +239,7 @@
                     <div class="article_wrapper">
                  
                         <a class="article_title"><h2>Estadisticas</h2></a>
-                        <p class="prologue">Estadisticas sobre el tiempo de respuesta de comentarios</p>
+                        <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
                         <hr />
 						<?php $var = MAX($de_noche,$de_maniana,$de_noche);  ?>
 						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
@@ -308,20 +308,17 @@ $(function () {
         	    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
             	percentageDecimals: 1
             },
-            plotOptions: {
+			 plotOptions: {
                 pie: {
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        formatter: function() {
-                            return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage*100)/100 +' %';
-                        }
-                    }
+                        enabled: false
+                    },
+                    showInLegend: true
                 }
             },
+            
             series: [{
                 type: 'pie',
                 name: 'Porcentaje',
