@@ -145,7 +145,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
-					<p align="right" style="margin-top:40px;"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"></p>
+					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
                </div>
                         
                <div id="header_right">

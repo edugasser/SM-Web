@@ -222,7 +222,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
-					<p align="right" style="margin-top:40px;"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"></p>
+					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="100" src="img/<?php echo $_GET['user'];?>.jpg"></a></p>
                </div>
                         
                <div id="header_right">
@@ -245,7 +245,7 @@
 						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
 						<div id="container" style="min-width: 400px; height: 400px;" ></div>
 						
-						<h4 style="margin:20px;">El tiempo medio de respuesta de un comentario es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_first;?> min.</span></h4>
+						<h4 style="margin:20px;">El tiempo medio de respuesta de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_first;?> min.</span></h4>
 						<a href="grafica.php?gf=first&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" target="_parent" class="button orange"  style="margin-left:20px;"  >Ver grafica</a>
 						 
 						<h4 style="margin:20px;">El tiempo medio de vida de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_last;?> min.</span></h4>
