@@ -119,7 +119,7 @@
                 <article>
                     <div class="article_wrapper">
                  
-                        <a class="article_title"><h2>Estadisticas</h2></a>
+                        <a class="article_title"><h2>Estadísticas</h2></a>
                         <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
                        
                         <hr />
