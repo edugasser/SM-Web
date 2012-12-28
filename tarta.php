@@ -126,7 +126,7 @@
 						<?php $var = MAX($de_noche,$de_maniana,$de_tarde); ?>
 						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
 						
-						<div id="container" style="min-width: 400px; height: 400px;" ></div>
+						<div id="container" style="min-width: 400px; height: 400px;margin-left:-50px" ></div>
 						
 						 
 						
@@ -179,6 +179,7 @@ $(function () {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: false
+			 
             },
             title: {
                 text: 'Franjas horarias'
