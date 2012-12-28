@@ -25,8 +25,7 @@
     <script type="text/javascript" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     
-        <!-- CHART -->
-    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+    <!-- CHART -->
     <script src="chart/js/highcharts.js"></script>
     <script src="chart/js/highcharts-more.js"></script>
     <script src="chart/js/modules/exporting.js"></script>
@@ -75,7 +74,7 @@
 			ORDER BY contestacion.post_id  DESC	";
 			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
 			 $de_noche = mysql_num_rows($resEmp);
-			$resultado = array($de_noche => 'de noche', $de_maniana => 'de ma�ana',$de_tarde => 'de tarde');
+			$resultado = array($de_noche => 'de noche', $de_maniana => 'de mañana',$de_tarde => 'de tarde');
 			
 		
 		?>
@@ -84,18 +83,14 @@
     <section id="page-wrapper">	
     
     	<section id="menu">
-        	<div>
-    		<h4>Navigation</h4>
-			
-            <ul>
-				
-            	<a href="index-2.html"><li class="item"><img src="img/icons/icon_home.png" alt="" /><span>Home</span></li></a>
-            
-            </ul>
-            
-
-            
-    		</div>
+            <div>
+                <h4>Usuarios</h4>
+                <ul>
+                    <li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
+                    <li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>Vicenç Juan Tomàs Montserrat</span></a></li>
+                    <li class="item"><a href="perfil.php?user=1132115210&network=facebook"><img src="img/1132115210.jpg" alt="" /><span>Matías Bandi</span></a></li>
+                </ul>
+            </div>
     	</section><!-- [menu end] --> 
     
     	<section id="content-wrapper">	
@@ -129,7 +124,7 @@
                        
                         <hr />
 						<?php $var = MAX($de_noche,$de_maniana,$de_tarde); ?>
-						<h4 style="margin:20px;">Franja horaria donde hacen m�s comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
+						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
 						
 						<div id="container" style="min-width: 400px; height: 400px;" ></div>
 						
@@ -145,7 +140,7 @@
                 <div id="footer_content">
                     <div class="widget">
                         <h4>Social App SM</h4>
-                        <p>Esta aplicaci�n realiza estad�sticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
+                        <p>Esta aplicación realiza estadísticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
                     </div>
                     <div class="widget">
                         <ul class="social">
@@ -207,7 +202,7 @@ $(function () {
                 type: 'pie',
                 name: 'Porcentaje',
                 data: [
-                    ['De ma�ana',   <?php echo $de_maniana;?>],
+                    ['De mañana',   <?php echo $de_maniana;?>],
                     ['De tarde',       <?php echo $de_tarde;?>],
                    
                     ['De noche',    <?php echo $de_noche;?>]
