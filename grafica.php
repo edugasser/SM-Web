@@ -155,7 +155,7 @@
                        
                         <hr />
 						
-						<div id="container" style="float:left;width:100%">
+						<div id="container" style="float:left;width:100%;">
 						 
 						
                   
@@ -195,6 +195,7 @@
 						renderTo: 'container',
 						type: 'line',
 						marginRight: 5,
+						
 						marginBottom: 50
 					},
 					title: {
