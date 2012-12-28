@@ -1,17 +1,11 @@
 <!DOCTYPE html> 
 <html> 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; ">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <!-- [portable options] -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    
-    <!-- [SEO] -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Lukas Postulka, http://themeforest.net/user/pista42"> 
     
 	<title>Social App SM</title>
     
@@ -31,14 +25,11 @@
     <script type="text/javascript" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     
-        <!-- CHART -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- CHART -->
     <script src="chart/js/highcharts.js"></script>
     <script src="chart/js/highcharts-more.js"></script>
     <script src="chart/js/modules/exporting.js"></script>
-        
-    <!-- [executing common scripts] -->     
-        
+                
 </head>
 	
 <body>
@@ -122,16 +113,14 @@
     
     	<section id="menu">
         	<div>
-    		<h4>Navigation</h4>
-			
-            <ul>
-				
-            	<a href="index-2.html"><li class="item"><img src="img/icons/icon_home.png" alt="" /><span>Home</span></li></a>
+        		<h4>Usuarios</h4>
+                <ul>
+                	<li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>VicenÃ§ Juan TomÃ s Montserrat</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>Juan JosÃ© Pol Fuentes</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>MatÃ­as Bandi</span></a></li>
             
-            </ul>
-            
-
-            
+                </ul>
     		</div>
     	</section><!-- [menu end] --> 
     
@@ -179,7 +168,7 @@
                 <div id="footer_content">
                     <div class="widget">
                         <h4>Social App SM</h4>
-                        <p>Esta aplicación realiza estadísticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
+                        <p>Esta aplicaciÃ³n realiza estadÃ­sticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
                     </div>
                     <div class="widget">
                         <ul class="social">
@@ -209,11 +198,11 @@
 						marginBottom: 25
 					},
 					title: {
-						text: 'Gráfica tiempo último comentario',
+						text: 'GrÃ¡fica tiempo Ãºltimo comentario',
 						x: -20 //center
 					},
 					subtitle: {
-						text: 'Tiempo de vida de una publicación',
+						text: 'Tiempo de vida de una publicaciÃ³n',
 						x: -20
 					},
 					xAxis: {
@@ -262,7 +251,7 @@
 						marginBottom: 5
 					},
 					title: {
-						text: 'Gráfica tiempo primera publicación',
+						text: 'GrÃ¡fica tiempo primera publicaciÃ³n',
 						x: -20 //center
 					},
 					subtitle: {

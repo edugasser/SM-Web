@@ -1,17 +1,11 @@
 <!DOCTYPE html> 
 <html> 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; ">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <!-- [portable options] -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    
-    <!-- [SEO] -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Lukas Postulka, http://themeforest.net/user/pista42"> 
     
 	<title>Social App SM</title>
     
@@ -31,12 +25,14 @@
     <script type="text/javascript" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     
-            <!-- CHART -->
+    <!-- CHART -->
+    <!-- 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="chart/js/highcharts.js"></script>
     <script src="chart/js/highcharts-more.js"></script>
     <script src="chart/js/modules/exporting.js"></script>
-        
+    -->
+
     <!-- [executing common scripts] -->  
  <style type="text/css">	
         .button {
@@ -192,7 +188,7 @@
 			ORDER BY contestacion.post_id  DESC	";
 			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
 			 $de_noche = mysql_num_rows($resEmp);
-			$resultado = array($de_noche => 'de noche', $de_maniana => 'de mañana',$de_tarde => 'de tarde');
+			$resultado = array($de_noche => 'de noche', $de_maniana => 'de maÃ±ana',$de_tarde => 'de tarde');
 			
 		
 		?>
@@ -201,13 +197,14 @@
     
     	<section id="menu">
         	<div>
-    		<h4>Navigation</h4>
-            <ul>
-            	<a href="index-2.html"><li class="item"><img src="img/icons/icon_home.png" alt="" /><span>Home</span></li></a>
- 
-            </ul>
- 
+        		<h4>Usuarios</h4>
+                <ul>
+                	<li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>VicenÃ§ Juan TomÃ s Montserrat</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>Juan JosÃ© Pol Fuentes</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>MatÃ­as Bandi</span></a></li>
             
+                </ul>
     		</div>
     	</section><!-- [menu end] --> 
 
@@ -242,13 +239,13 @@
                         <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
                         <hr />
 						<?php $var = MAX($de_noche,$de_maniana,$de_tarde); ?>
-						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
+						<h4 style="margin:20px;">Franja horaria donde hacen mÃ¡s comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
 						<a href="tarta.php?gf=first&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" target="_parent" class="button orange"  style="margin-left:20px;"  >Ver grafica</a>
 						 
-						<h4 style="margin:20px;">El tiempo medio de respuesta de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_first;?> min.</span></h4>
+						<h4 style="margin:20px;">El tiempo medio de respuesta de una publicaciÃ³n es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_first;?> min.</span></h4>
 						<a href="grafica.php?gf=first&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" target="_parent" class="button orange"  style="margin-left:20px;"  >Ver grafica</a>
 						 
-						<h4 style="margin:20px;">El tiempo medio de vida de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_last;?> min.</span></h4>
+						<h4 style="margin:20px;">El tiempo medio de vida de una publicaciÃ³n es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_last;?> min.</span></h4>
 						<a href="grafica.php?gf=last&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" class="button orange"  style="margin-left:20px;" data-router="section">Ver grafica</a>
 						 
 
@@ -262,7 +259,7 @@
                 <div id="footer_content">
                     <div class="widget">
                         <h4>Social App SM</h4>
-                        <p>Esta aplicación realiza estadísticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
+                        <p>Esta aplicaciÃ³n realiza estadÃ­sticas sobre el tiempo de los comentarios realizados en las redes sociales Facebook y Twitter.</p>
                     </div>
                     <div class="widget">
                         <ul class="social">
@@ -323,7 +320,7 @@ $(function () {
                 type: 'pie',
                 name: 'Porcentaje',
                 data: [
-                    ['De mañana',   <?php echo $de_maniana;?>],
+                    ['De maÃ±ana',   <?php echo $de_maniana;?>],
                     ['De tarde',       <?php echo $de_tarde;?>],
                    
                     ['De noche',    <?php echo $de_noche;?>]
