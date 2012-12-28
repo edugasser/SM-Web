@@ -179,6 +179,11 @@ $(function () {
 		
 		// Build the chart
         chart = new Highcharts.Chart({
+		navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        } ,   
             chart: {
                 renderTo: 'container',
                 plotBackgroundColor: null,

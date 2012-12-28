@@ -154,7 +154,7 @@
                        
                         <hr />
 						
-						<div id="container" style="float:left;width:100%;">
+						<div id="container" style="float:left;width:100%;margin-left:-15px">
 						 
 						
                   
@@ -190,6 +190,11 @@
 			var chart;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
+				navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        } ,  
 					chart: {
 						renderTo: 'container',
 						type: 'line',
@@ -199,11 +204,11 @@
 					},
 					title: {
 						text: 'Gráfica tiempo último comentario',
-						x: -20 //center
+						x: 0 //center
 					},
 					subtitle: {
 						text: 'Tiempo de vida de una publicación',
-						x: -20
+						x: 0
 					},
 					xAxis: {
 						categories: false
@@ -244,6 +249,11 @@
 			var chart;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
+				navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        } ,  
 					chart: {
 						renderTo: 'container',
 						type: 'line',
@@ -252,11 +262,11 @@
 					},
 					title: {
 						text: 'Gráfica tiempo primera publicación',
-						x: -20 //center
+						x: 0 //center
 					},
 					subtitle: {
 						text: 'Tiempo hasta que se recibe el primer comentario',
-						x: -20
+						x: 0
 					},
 					xAxis: {
 						categories: false
