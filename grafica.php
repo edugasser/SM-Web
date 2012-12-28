@@ -117,7 +117,7 @@
                 <ul>
                 	<li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
     				<li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>Vicenç Juan Tomàs Montserrat</span></a></li>
-    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/1132115210.jpg" alt="" /><span>Matías Bandi</span></a></li>
+    				<li class="item"><a href="perfil.php?user=1132115210&network=facebook"><img src="img/1132115210.jpg" alt="" /><span>Matías Bandi</span></a></li>
             
                 </ul>
     		</div>
