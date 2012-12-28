@@ -117,8 +117,7 @@
                 <ul>
                 	<li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
     				<li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>Vicenç Juan Tomàs Montserrat</span></a></li>
-    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>Juan José Pol Fuentes</span></a></li>
-    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>Matías Bandi</span></a></li>
+    				<li class="item"><a href="perfil.php?user=1132115210&network=facebook"><img src="img/1132115210.jpg" alt="" /><span>Matías Bandi</span></a></li>
             
                 </ul>
     		</div>
@@ -134,7 +133,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
-					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="60" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
+					<p align="right" style="margin-top:40px; margin-right:30px"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="60" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
                </div>
                         
                <div id="header_right">
@@ -150,7 +149,7 @@
                 <article>
                     <div class="article_wrapper">
                  
-                        <a class="article_title"><h2>Estadisticas</h2></a>
+                        <a class="article_title"><h2>Estadísticas</h2></a>
                         <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
                        
                         <hr />
