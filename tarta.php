@@ -82,10 +82,10 @@
 
     <section id="page-wrapper">	
     
-    	<section id="menu">
-            <div>
+    	<section id="menu" >
+            <div  >
                 <h4>Usuarios</h4>
-                <ul>
+                <ul >
                     <li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
                     <li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>Vicenç Juan Tomàs Montserrat</span></a></li>
                     <li class="item"><a href="perfil.php?user=1132115210&network=facebook"><img src="img/1132115210.jpg" alt="" /><span>Matías Bandi</span></a></li>
@@ -126,7 +126,7 @@
 						<?php $var = MAX($de_noche,$de_maniana,$de_tarde); ?>
 						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
 						
-						<div id="container" style="min-width: 400px; height: 400px;margin-left:-50px" ></div>
+						<div id="container" style="float:left;width:100%;margin-left:-15px" ></div>
 						
 						 
 						
