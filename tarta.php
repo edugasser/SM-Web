@@ -1,19 +1,13 @@
 <!DOCTYPE html> 
 <html> 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; ">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <!-- [portable options] -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0; user-scalable=0;" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     
-    <!-- [SEO] -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Lukas Postulka, http://themeforest.net/user/pista42"> 
-    
-	<title>Social App SM</title>
+    <title>Social App SM</title>
     
     <!-- [loading stylesheets] -->    
     <link type="text/css" rel="stylesheet" href="css/style.css" />
@@ -32,7 +26,7 @@
     <script type="text/javascript" src="js/main.js"></script>
     
         <!-- CHART -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
     <script src="chart/js/highcharts.js"></script>
     <script src="chart/js/highcharts-more.js"></script>
     <script src="chart/js/modules/exporting.js"></script>
@@ -114,7 +108,7 @@
                         
                <div id="header_title">
                     <h1>Social App SM</h1>
-					<p align="right" style="margin-top:40px;"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="60" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
+					<p align="right" style="margin-top:40px; margin-right:30px"><a href="perfil.php?user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>"><img width="60" src="img/<?php echo $_GET['user'];?>.jpg"><a/></p>
                </div>
                         
                <div id="header_right">
