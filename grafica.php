@@ -195,7 +195,7 @@
 						renderTo: 'container',
 						type: 'line',
 						marginRight: 5,
-						marginBottom: 25
+						marginBottom: 50
 					},
 					title: {
 						text: 'Gráfica tiempo último comentario',
@@ -248,7 +248,7 @@
 						renderTo: 'container',
 						type: 'line',
 						marginRight: 5,
-						marginBottom: 5
+						marginBottom: 50
 					},
 					title: {
 						text: 'Gráfica tiempo primera publicación',
