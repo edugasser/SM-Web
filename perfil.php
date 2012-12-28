@@ -201,8 +201,7 @@
                 <ul>
                 	<li class="item"><a href="perfil.php?user=1148381712&network=facebook"><img src="img/1148381712.jpg" alt="" /><span>Eduardo Gasser</span></a></li>
     				<li class="item"><a href="perfil.php?user=414977772&network=twitter"> <img src="img/414977772.jpg" alt="" /><span>Vicenç Juan Tomàs Montserrat</span></a></li>
-    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>Juan José Pol Fuentes</span></a></li>
-    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/icons/icon_user.png" alt="" /><span>Matías Bandi</span></a></li>
+    				<li class="item"><a href="perfil.php?user=414977772&network=twitter"><img src="img/1132115210.jpg" alt="" /><span>Matías Bandi</span></a></li>
             
                 </ul>
     		</div>
@@ -235,7 +234,7 @@
                 <article>
                     <div class="article_wrapper">
                  
-                        <a class="article_title"><h2>Estadisticas</h2></a>
+                        <a class="article_title"><h2>Estadísticas</h2></a>
                         <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
                         <hr />
 						<?php $var = MAX($de_noche,$de_maniana,$de_tarde); ?>
