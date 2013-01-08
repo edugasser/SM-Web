@@ -78,120 +78,17 @@
 		
 			$user= $_GET['user'];
 			$network= $_GET['network'];
+			$id = $_GET['id'];
 			$where="";
 			if ($network == 'facebook') $where = "and tu_posts.network='facebook'";
 			$conexion = mysql_connect("ec2-54-247-9-188.eu-west-1.compute.amazonaws.com", "edugasser", "010203");
 			mysql_select_db("thinkupdb", $conexion);
 			$queEmp = "
-			SELECT 
-			tu_posts.post_text as comment_original,
-			GROUP_CONCAT(contestacion.post_text, ' ', contestacion.pub_date SEPARATOR '<br>') as comment_alguien,
-			tu_posts.post_id as original_id, 
-			contestacion.post_id AS alguien_id,
-			tu_posts.pub_date AS data_original, 
-			contestacion.pub_date AS data_alguien,
-			MAX(contestacion.pub_date) AS ultimo_comment,
-			MIN(contestacion.pub_date) AS first_comment
-			FROM tu_posts 
-			JOIN tu_posts AS contestacion ON contestacion.in_reply_to_post_id=tu_posts.post_id  
-			WHERE tu_posts.author_user_id='$user' $where
-			GROUP BY original_id HAVING tu_posts.pub_date <= first_comment
-			ORDER BY contestacion.pub_date DESC ";
+			SELECT 	* FROM tu_posts	WHERE post_id = '$id'";
 			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
 			$totEmp = mysql_num_rows($resEmp);
-			// id vicens 414977772
-			$media_first_comment = 0;
-			$media_last_comment = 0;
-			$contador_comment = 1;
-			$array = array();
-			$array_last = array();
-			if ($totEmp> 0) {
-			   while ($rowEmp = mysql_fetch_assoc($resEmp)) {
-				//DIFERENCIA ENTRE LA PUBLICACION Y EL PRIMER COMENTARIO
-			    $data_original = $rowEmp['data_original'];
-				$data_alguien = $rowEmp['first_comment'];
-	
-				$s = strtotime($data_alguien)-strtotime($data_original); 
-				$d = intval($s/86400); 
-				$s -= $d*86400; 
-				$h_f = intval($s/3600); 
-				$s -= $h_f*3600; 
-				$m_f = intval($s/60); 
-				$s -= $m_f*60; 
-				$dif_first= (($d*24)+$h_f)." ".$m_f."min"; 
-				//$dif2= $d." ".$h_f." ".$m_f."min"; 
-				$min_first = ($h_f*60)+$m_f;
-		
-				//DIFERENCIA ENTRE LA PUBLICACION Y EL ULTIMO COMENTARIO
-			    $data_original = $rowEmp['data_original'];
-				$data_alguien = $rowEmp['ultimo_comment'];
-	
-				$s = strtotime($data_alguien)-strtotime($data_original); 
-				$d = intval($s/86400); 
-				$s -= $d*86400; 
-				$h = intval($s/3600); 
-				$s -= $h*3600; 
-				$m = intval($s/60); 
-				$s -= $m*60; 
-				$dif_last= (($d*24)+$h)." ".$m."min"; 
-				//$dif2= $d." ".$h." ".$m."min"; 
-				 $min_last = ($h*60)+$m;
-				$media_first_comment += $min_first;
-				$media_last_comment += $min_last;
-				$array[$contador_comment] = $min_first;
-				$array_last[$contador_comment] = $min_last;
-				$contador_comment += 1;
- 
-			   }
-			}
-			
-			//6 - 13:00
-			//14 - 19
-			//20 - 5
-			
-			 $media_minutos = ($media_first_comment/$contador_comment);
-			 $horas_first = intval($media_minutos/60);
-			 $minutos_first = intval((($media_minutos/60) - $horas_first)*60);
-			 $tiempo_medio_first = $horas_first."h ".$minutos_first;
-			 
-			 $media_minutos = ($media_last_comment/$contador_comment);
-			 $horas_first = intval($media_minutos/60);
-			 $minutos_first = intval((($media_minutos/60) - $horas_first)*60);
-			 $tiempo_medio_last = $horas_first."h ".$minutos_first;
-			 /*----------franja horaria de 6 a 13-------------*/
-			$queEmp = "
-			SELECT DISTINCT *,tu_posts.post_id as original_id,COUNT(*) AS por_maniana,DATE_FORMAT(tu_posts.pub_date, '%H') as hora
-			FROM tu_posts 
-			JOIN tu_posts AS contestacion ON contestacion.in_reply_to_post_id=tu_posts.post_id  
-			WHERE tu_posts.author_user_id='$user' $where
-			GROUP BY contestacion.post_id  HAVING hora <= 13 AND hora >= 6
-			ORDER BY contestacion.post_id  DESC	";
-			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
-			 $de_maniana = mysql_num_rows($resEmp);
-			 /*----------franja horaria de 13 a 19-------------*/
-			$queEmp = "
-			SELECT DISTINCT *,tu_posts.post_id as original_id,COUNT(*) AS por_maniana,DATE_FORMAT(tu_posts.pub_date, '%H') as hora
-			FROM tu_posts 
-			JOIN tu_posts AS contestacion ON contestacion.in_reply_to_post_id=tu_posts.post_id  
-			WHERE tu_posts.author_user_id='$user' $where
-			GROUP BY contestacion.post_id  HAVING hora <= 19 AND hora > 13
-			ORDER BY contestacion.post_id  DESC	";
-			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
-			 $de_tarde = mysql_num_rows($resEmp);
-			 /*----------franja horaria de 20 a 6-------------*/
-			$queEmp = "
-			SELECT DISTINCT *,tu_posts.post_id as original_id,COUNT(*) AS por_maniana,DATE_FORMAT(tu_posts.pub_date, '%H') as hora
-			FROM tu_posts 
-			JOIN tu_posts AS contestacion ON contestacion.in_reply_to_post_id=tu_posts.post_id  
-			WHERE tu_posts.author_user_id='$user' $where
-			GROUP BY contestacion.post_id  HAVING hora > 19
-			ORDER BY contestacion.post_id  DESC	";
-			$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
-			 $de_noche = mysql_num_rows($resEmp);
-			$resultado = array($de_noche => 'de noche', $de_maniana => 'de mañana',$de_tarde => 'de tarde');
-			
-		
-		?>
+		 	
+	?>
 
     <section id="page-wrapper">	
     
@@ -232,21 +129,16 @@
                 
                 <article>
                     <div class="article_wrapper">
-                 
-                        <a class="article_title"><h2>Estadísticas</h2></a>
-                        <p class="prologue">Sobre el tiempo de respuesta de publicaciones</p>
+                 <?php
+                 if ($totEmp> 0) {
+	             while ($rowEmp = mysql_fetch_assoc($resEmp)) {
+	             ?>
+                        <a class="article_title"><h2>Comentario</h2></a>
                         <hr />
-						<?php $var = MAX($de_noche,$de_maniana,$de_tarde); ?>
-						<h4 style="margin:20px;">Franja horaria donde hacen más comentarios: <span style="font-size:17pt;color:#366297"><?php echo $resultado[$var]; ?></span></h4> 
-						<a href="tarta.php?gf=first&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" target="_parent" class="button orange"  style="margin-left:20px;"  >Ver gráfica</a>
+						<p style="margin:20px;">@<?php echo $rowEmp['author_username'];?> | Fecha comentario: <?php echo $rowEmp['pub_date'];?></p>
+						<h4 style="margin:20px;"><?php echo $rowEmp['post_text'];?></h4> 
 						 
-						<h4 style="margin:20px;">El tiempo medio de respuesta de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_first;?> min.</span></h4>
-						<a href="grafica.php?gf=first&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" target="_parent" class="button orange"  style="margin-left:20px;"  >Ver gráfica</a>
-						 
-						<h4 style="margin:20px;">El tiempo medio de vida de una publicación es de : <span style="font-size:17pt;color:#366297"><?php echo $tiempo_medio_last;?> min.</span></h4>
-						<a href="grafica.php?gf=last&user=<?php echo $_GET['user'];?>&network=<?php echo $_GET['network'];?>" class="button orange"  style="margin-left:20px;" data-router="section">Ver gráfica</a>
-						 
-
+				<?php }} ?>
                     </div>
 					
                 </article><!-- [article end] --> 
