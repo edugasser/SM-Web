@@ -230,7 +230,7 @@
 					tooltip: {
 						formatter: function() {
 								useHTML:true;
-								return '<b>'+ this.series.name +'</b><br/>'+
+								return '<b>'+ this.series.name +'</b><br/> '+
 								this.x +': '+ this.y +'';
 						}
 					},
